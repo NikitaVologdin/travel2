@@ -484,13 +484,12 @@
     padding-top: 75px;
 
     a {
-        flex-basis: 50%;
+        flex: 0 0 31%;
         margin: 0 auto;
     }
 }
 
 .top-destinations__item {
-    flex: 0 0 31%;
     box-shadow:  10px 25px 15px 5px #e7e6e6a4;
     color: $lightPurple;
     padding-bottom: 45px;
@@ -555,6 +554,10 @@
 
     .top-destinations {
         flex-direction: column;
+
+        a:nth-child(n+2){
+            margin-top: 50px;
+        }
     }
 
     .top-destinations__item{
@@ -562,9 +565,7 @@
         margin: 0 auto;
         box-shadow: 0px 10px 25px 5px #e7e6e6a4;
 
-        &:nth-child(n+2){
-            margin-top: 50px;
-        }
+
     }
 
 
