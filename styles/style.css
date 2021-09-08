@@ -177,12 +177,13 @@ h6 {
 .elevator i {
   font-size: 10px;
   color: #3E2E4D;
+  padding: 10px;
 }
 
 .elevator i:first-child {
   -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg);
-  margin-bottom: 57px;
+  margin-bottom: 37px;
 }
 
 @media (max-width: 768px) {
