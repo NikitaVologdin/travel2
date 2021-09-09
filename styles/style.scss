@@ -1,4 +1,5 @@
 @import 'mixins', 'variables', 'null', 'burger';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;600;700&family=Volkhov:wght@700&display=swap');
 
 
 .body {
@@ -62,6 +63,8 @@
     flex-direction: row;
     align-items: center;
     position: relative;
+    font-family: $open-sans;
+    font-weight: 500;
 
     ._pinkShadow {
         position: absolute;
@@ -89,7 +92,6 @@
     padding-right: 20/$containerWidth*100%;
 
     .nav {
-
         ul {
             display: flex;
             justify-content: space-evenly;
@@ -234,6 +236,7 @@
 
     .intro__heading {
         font-family: 'Poppins', sans-serif;
+        font-weight: 700;
         color: #DF6951;
         @include adaptiv-font(20, 16)  
     }
@@ -241,6 +244,7 @@
     .intro__subheading {
         padding-top: 35px;
         font-family: 'Volkhov', serif;
+        font-weight: 700;
         color: #181E4B;
         @include adaptiv-font(84, 30)  
     }
@@ -294,6 +298,7 @@
         color: #5E6282;
         @include adaptiv-font(16, 12);
         font-family: $poppins;
+        line-height: 30px;
     }
 
     .intro__buttons {
@@ -420,7 +425,7 @@
         align-items: baseline;
     }
 
-    h4 {
+    .features__heading {
         color: $darkPurple;
         @include adaptiv-font(20, 16);
         text-decoration: capitalize;
@@ -428,8 +433,9 @@
 
     }
 
-    p {
+    .features__paragraph {
         margin-top: 25px;
+        line-height: 26px;
         color: $lightPurple;
         @include adaptiv-font(16, 12);
         width: 85%;
@@ -440,14 +446,16 @@
     box-shadow: 40px 50px 25px -15px #e7e6e6a4;
     border-radius: 30px;
     position: relative;
+    background-color: white;
+    z-index: 1;
     
 }
 
 .item_decoration {
     position: absolute;
     z-index: -1;
-    top: 200px;
-    left: 285px;
+    top: 225px;
+    left: 270px;
 }
 
 @media (max-width: $md){
@@ -902,6 +910,7 @@
 .slider-item__content {
     font-size: 16px;
     font-weight: 500;
+    line-height: 32px;
 }
 
 .slider-item__authorName {

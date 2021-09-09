@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;600;700&family=Volkhov:wght@700&display=swap");
 * {
   padding: 0px;
   margin: 0px;
@@ -220,6 +221,8 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
 }
 
 .header__body ._pinkShadow {
@@ -392,6 +395,7 @@ h6 {
 
 .intro .intro__heading {
   font-family: 'Poppins', sans-serif;
+  font-weight: 700;
   color: #DF6951;
   font-size: calc(16px + 4 * ((100vw - 320px) / 1120));
 }
@@ -399,6 +403,7 @@ h6 {
 .intro .intro__subheading {
   padding-top: 35px;
   font-family: 'Volkhov', serif;
+  font-weight: 700;
   color: #181E4B;
   font-size: calc(30px + 54 * ((100vw - 320px) / 1120));
 }
@@ -438,6 +443,7 @@ h6 {
   color: #5E6282;
   font-size: calc(12px + 4 * ((100vw - 320px) / 1120));
   font-family: "Poppins", sans-serif;
+  line-height: 30px;
 }
 
 .intro .intro__buttons {
@@ -589,7 +595,7 @@ h6 {
           align-items: baseline;
 }
 
-.features__item h4 {
+.features__item .features__heading {
   color: #14183E;
   font-size: calc(16px + 4 * ((100vw - 320px) / 1120));
   -webkit-text-decoration: capitalize;
@@ -597,8 +603,9 @@ h6 {
   margin-top: 35px;
 }
 
-.features__item p {
+.features__item .features__paragraph {
   margin-top: 25px;
+  line-height: 26px;
   color: #5E6282;
   font-size: calc(12px + 4 * ((100vw - 320px) / 1120));
   width: 85%;
@@ -609,13 +616,15 @@ h6 {
           box-shadow: 40px 50px 25px -15px #e7e6e6a4;
   border-radius: 30px;
   position: relative;
+  background-color: white;
+  z-index: 1;
 }
 
 .item_decoration {
   position: absolute;
   z-index: -1;
-  top: 200px;
-  left: 285px;
+  top: 225px;
+  left: 270px;
 }
 
 @media (max-width: 768px) {
@@ -1105,6 +1114,7 @@ h6 {
 .slider-item__content {
   font-size: 16px;
   font-weight: 500;
+  line-height: 32px;
 }
 
 .slider-item__authorName {
