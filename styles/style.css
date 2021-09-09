@@ -624,7 +624,7 @@ h6 {
   position: absolute;
   z-index: -1;
   top: 225px;
-  left: 270px;
+  left: 275px;
 }
 
 @media (max-width: 768px) {
