@@ -6,7 +6,9 @@ window.addEventListener('load', ()=>{
     }
 )
 
-document.addEventListener('click', (event)=>{
+let elevatorDiv = document.querySelector('.elevator')
+
+elevatorDiv.addEventListener('click', (event)=>{
     let adres = elevator.curentAdres()
     console.log(event.target.id)
     if(event.target.id == 'elevatorDown'){
