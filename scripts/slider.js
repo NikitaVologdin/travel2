@@ -18,9 +18,8 @@ let feedbacks = [
     }
 ]
 
-let buttons = document.querySelectorAll(".switch__button")
-for(button of buttons) {
-    button.addEventListener('click', (event)=>{
+let buttons = document.querySelector(".switch")
+    buttons.addEventListener('click', (event)=>{
         console.log(event)
         let currentSlide = document.querySelector('.slider-item')
             currentSlide.remove()
@@ -28,7 +27,6 @@ for(button of buttons) {
             newSlide(event.target.id)
     
     })
-}
 
 
 function mockup (index) {
