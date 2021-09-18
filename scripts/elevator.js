@@ -38,15 +38,22 @@ const height = {
 }
 
 const sections = {
-    sections : document.querySelectorAll('section'),
+    sections : document.querySelectorAll('#section'),
+    height : 0,
     adreses : [],
 
     pushAdreses() {
+        let height = this.getHeight()
+
         this.sections.forEach(element => {   
-            this.adreses.push(element.offsetTop)
+            this.adreses.push(element.offsetTop + height / 2)
         });
         return this.adreses
     },
+
+    getHeight() {
+        return this.sections[1].offsetHeight
+    }
 }
 
 const elevator = {
