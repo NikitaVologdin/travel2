@@ -1,40 +1,45 @@
 "use strict"
 
-// window.addEventListener('load', ()=>{
-//         sections.adreses =  sections.pushAdreses()
-//         height.maxHeight = height.getDocHeight()
-//     }
-// )
+window.addEventListener('load', ()=>{
+        sections.adreses =  sections.pushAdreses()
+        height.maxHeight = height.getDocHeight()
+    }
+)
 
+let index = 0
 
 let elevatorDiv = document.querySelector('.elevator')
-let index = 0
 
 elevatorDiv.addEventListener('click', (event)=>{
 
+    index = curentAdress()
+
     if(event.target.id == 'elevatorDown'){
+        ++index
         if (index > sections.nodes.length - 1) {
             scrollToTop()
-        } else {
-            sections.nodes[index+1].scrollIntoView({
+        } else if (index === 0) {
+
+        }
+        else {
+            sections.nodes[index].scrollIntoView({
                 behavior: 'smooth',
                 block: 'center',
                 inline: 'center'
             })
-            ++index
         }
 
     } else if (event.target.id == 'elevatorUp'){
+        --index
         if (index < 0 || index === 0) {
             scrollToTop()
             index = 0
         } else {
-            sections.nodes[index-1].scrollIntoView({
+            sections.nodes[index].scrollIntoView({
                 behavior: 'smooth',
                 block: 'center',
                 inline: 'center'
             })
-            --index
         }
     }
 })
@@ -45,8 +50,14 @@ function scrollToTop () {
         left: 0,
         behavior: 'smooth'
     })
-    
-    index = 0 
+}
+
+function scrollTo (sectionIndex) {
+    return sections.nodes[sectionIndex].scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+                inline: 'center'
+            })
 }
 
 const height = {
@@ -61,7 +72,7 @@ const height = {
 }
 
 const sections = {
-    nodes : document.querySelectorAll('section'),
+    nodes : document.querySelectorAll('#section'),
     adreses : [],
 
     pushAdreses() {
@@ -76,9 +87,7 @@ const sections = {
     }
 }
 
-const elevator = {
-
-    curentAdres() {
+function curentAdress() {
         let position = window.pageYOffset
         const adreses = sections.adreses
 
@@ -87,5 +96,4 @@ const elevator = {
         });
 
         return adreses.indexOf(curent) 
-    }
 }
