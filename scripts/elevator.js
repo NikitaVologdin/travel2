@@ -18,15 +18,8 @@ elevatorDiv.addEventListener('click', (event)=>{
         ++index
         if (index > sections.nodes.length - 1) {
             scrollToTop()
-        } else if (index === 0) {
-
-        }
-        else {
-            sections.nodes[index].scrollIntoView({
-                behavior: 'smooth',
-                block: 'center',
-                inline: 'center'
-            })
+        } else {
+            scrollToSection(index)
         }
 
     } else if (event.target.id == 'elevatorUp'){
@@ -35,24 +28,20 @@ elevatorDiv.addEventListener('click', (event)=>{
             scrollToTop()
             index = 0
         } else {
-            sections.nodes[index].scrollIntoView({
-                behavior: 'smooth',
-                block: 'center',
-                inline: 'center'
-            })
+            scrollToSection(index)
         }
     }
 })
 
 function scrollToTop () {
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    })
+    return window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        })
 }
 
-function scrollTo (sectionIndex) {
+function scrollToSection (sectionIndex) {
     return sections.nodes[sectionIndex].scrollIntoView({
                 behavior: 'smooth',
                 block: 'center',
