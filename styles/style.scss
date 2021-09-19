@@ -1,8 +1,8 @@
 @import 'mixins', 'variables', 'null', 'burger';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;600;700&family=Volkhov:wght@700&display=swap');
 
-section {
-    height: 100vh;
+section, footer {
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -976,7 +976,7 @@ section {
 
 
 .partners {
-    margin: 0 75px;
+    margin-bottom: 90px;
     display: flex;
     justify-content: space-around;
     align-items: center;
