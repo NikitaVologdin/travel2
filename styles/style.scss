@@ -1,6 +1,12 @@
 @import 'mixins', 'variables', 'null', 'burger';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;600;700&family=Volkhov:wght@700&display=swap');
 
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .body {
     width: 100%;
@@ -20,6 +26,7 @@
     top: 40%;
     display: flex;
     flex-direction: column;
+    z-index: 1;
 
     i {
         font-size: 10px;
@@ -224,7 +231,6 @@
 // Main
 
 .main__intro {
-    margin-top: 135px;
     display: flex;
     justify-content: space-between;
 }
@@ -251,22 +257,9 @@
 
     span {
         position: relative;
-
-        // img {
-        //     width: 100%;
-        //     object-fit: cover;
-        //     position: absolute;
-        // }
     }
 
     span:after {
-        // position: absolute;
-        // width: 100%;
-        // content: url(../images/main/headingParagraphDecor.svg);
-        // top: 25px;
-        // left: -20px;
-        // z-index: -1;
-
         background-image: url(../images/main/headingParagraphDecor.svg);
         background-size: contain;
         display: inline-block;
@@ -346,7 +339,6 @@
 @media (max-width: $sm) {
     .main__intro {
         position: relative;
-        margin-top: 75px;
     }
 
     .intro {
@@ -360,9 +352,6 @@
     }
 }
 
-.main__offer {
-    margin-top: 130px;
-}
 
 .offer__heading {
     position: relative;
@@ -460,10 +449,6 @@
 
 @media (max-width: $md){
 
-    .offer__features {
-        margin-top: 75px;
-    }
-
     .features__item {
         flex: 0 0 50%;
 
@@ -482,10 +467,10 @@
     }
 }
 
-.main__destinations {
-    margin-top: 125px;
-    
+.destinations {
+    width: 100%;
 }
+
 .top-destinations {
     display: flex;
     // flex-wrap: wrap;
@@ -494,7 +479,8 @@
 
     a {
         flex: 0 0 31%;
-        margin: 0 auto;
+        display: block;
+        margin: 0 1%;
     }
 }
 
@@ -557,9 +543,6 @@
 }
 
 @media (max-width: $md){
-    .main__destinations {
-        margin-top: 75px;
-    }
 
     .top-destinations {
         flex-direction: column;
@@ -580,10 +563,8 @@
 
 }
 
-
 .booking__heading {
     align-items: flex-start;
-    margin-top: 195px;
     margin-bottom: 60px;
     width: 45%;
 
@@ -825,11 +806,13 @@
     }
 }
 
+.testimonials {
+    display: flex;
+    justify-content: space-between;
+}
+
 .testimonials__heading {
     align-items: flex-start;
-    margin-top: 195px;
-    margin-bottom: 60px;
-    width: 45%;
 
     h5 {
         margin-top: 23px;
@@ -838,20 +821,15 @@
 
 @media (max-width: $md){
     .testimonials_heading{
-      margin-top: 75px;
       width: 100%;
     }
-}
-
-.testimonials {
-    padding-bottom: 120px;
 }
 
 
 .testimonials__wrapper{
     display: flex;
     position: relative;
-    justify-content: space-between;
+    margin-left: 5%;
 }
 
 .switch_alignVerticalCenter {
@@ -861,6 +839,7 @@
 
 .switch {
     display: flex;
+    margin-top: 100px;
 }
 .switch__button {
     padding: 6px;
@@ -886,8 +865,6 @@
     box-shadow: 0 0 50px 10px #e7e6e6a4;
     border-radius: 15px;
     position: relative;
-    margin-right: 145px;
-    margin-top: -170px;
     z-index: 1;
 }
 
@@ -933,8 +910,8 @@
     width: 504px;
     height: 233px;
     padding: 40px 35px;
-    top: -60px;
-    right: 95px;
+    top: 150px;
+    right: -80px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -997,11 +974,9 @@
     }
 }
 
-.main__partners {
-    margin-top: 145px;
-}
 
 .partners {
+    margin: 0 75px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -1024,7 +999,6 @@
 
 
 .main__subscribe {
-    margin-top: 195px;
     position: relative;
     z-index: 1;
 
@@ -1201,9 +1175,14 @@
     }
 }
 
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .footer {
-    margin-top: 195px;
-    position: relative;
+    position: relative; 
 
     ._pinkShadow {
         position: absolute;

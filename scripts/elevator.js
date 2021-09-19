@@ -1,30 +1,53 @@
 "use strict"
 
-window.addEventListener('load', ()=>{
-        sections.adreses =  sections.pushAdreses()
-        height.maxHeight = height.getDocHeight()
-    }
-)
+// window.addEventListener('load', ()=>{
+//         sections.adreses =  sections.pushAdreses()
+//         height.maxHeight = height.getDocHeight()
+//     }
+// )
+
 
 let elevatorDiv = document.querySelector('.elevator')
+let index = 0
 
 elevatorDiv.addEventListener('click', (event)=>{
-    let adres = elevator.curentAdres()
-    console.log(event.target.id)
+
     if(event.target.id == 'elevatorDown'){
-        window.scroll({
-            top: sections.adreses[adres+1],
-            left: 0,
-            behavior: 'smooth'
-          })
+        if (index > sections.nodes.length - 1) {
+            scrollToTop()
+        } else {
+            sections.nodes[index+1].scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+                inline: 'center'
+            })
+            ++index
+        }
+
     } else if (event.target.id == 'elevatorUp'){
-        window.scroll({
-            top: sections.adreses[adres-1],
-            left: 0,
-            behavior: 'smooth'
-          })
+        if (index < 0 || index === 0) {
+            scrollToTop()
+            index = 0
+        } else {
+            sections.nodes[index-1].scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+                inline: 'center'
+            })
+            --index
+        }
     }
 })
+
+function scrollToTop () {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    })
+    
+    index = 0 
+}
 
 const height = {
     maxHeight : 0,
@@ -38,15 +61,12 @@ const height = {
 }
 
 const sections = {
-    sections : document.querySelectorAll('#section'),
-    height : 0,
+    nodes : document.querySelectorAll('section'),
     adreses : [],
 
     pushAdreses() {
-        let height = this.getHeight()
-
-        this.sections.forEach(element => {   
-            this.adreses.push(element.offsetTop + height / 2)
+        this.nodes.forEach(element => {   
+            this.adreses.push(element.offsetTop)
         });
         return this.adreses
     },
