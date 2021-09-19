@@ -285,6 +285,7 @@ section, footer {
 .header__nav .nav .nav__link {
   font-size: calc(10px + 7 * ((100vw - 320px) / 1120));
   color: #212832;
+  cursor: pointer;
 }
 
 .header__nav .nav .nav__link_signUp {
@@ -313,6 +314,7 @@ section, footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  cursor: pointer;
 }
 
 .header__language .language__parametr span {

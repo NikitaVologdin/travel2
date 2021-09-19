@@ -112,6 +112,7 @@ section, footer {
         .nav__link{
             @include adaptiv-font(17, 10);
             color: #212832;
+            cursor: pointer;
 
             // &:nth-child(n+2){
             //     margin-left: 70/$containerWidth*100%;
@@ -135,6 +136,7 @@ section, footer {
     .language__parametr {
         display: flex;
         flex-direction: column;
+        cursor: pointer;
 
         span {
             @include adaptiv-font(17px, 10px);

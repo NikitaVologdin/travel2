@@ -7,14 +7,6 @@ margin-top: 75px;
 
 shadow: e7e6e6a4
 
-Красная фигура под тенью!
-
-
-
-elevator
-
-top destanitions в линки и article
-
   src:  url('../fonts/icomoon.eot');
   src:  url('../fonts/icomoon.eot') format('embedded-opentype'),
     url('../fonts/icomoon.ttf') format('truetype'),
