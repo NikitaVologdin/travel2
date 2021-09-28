@@ -21,7 +21,7 @@ const feedbacks = [
 
 function addSliderItem (index) {
         return `
-        <div class="slider__item slider-item " id="slide${index}">
+        <div class="slider__item slider-item d-none" id="slide${index}">
             <img src="images/main/MikeTaylor@2x.png" alt="Feedback authors picture" class="slider-item__authorImg" id="authorImg">
             <p class="slider-item__content">${feedbacks[index].content}</p>
             <h5 class="slider-item__authorName">${feedbacks[index].name}</h5>
@@ -30,7 +30,7 @@ function addSliderItem (index) {
 }
 
 function addSliderPreviousItem (index) {
-    return `<div class="slider-item__previous-item"><div class="previous-item">
+    return `<div class="slider-item__previous-item d-none"><div class="previous-item">
     <h5 class="slider-item__authorName">${feedbacks[index].name}</h5>
     <h5 class="slider-item__authorLocation">${feedbacks[index].location}</h5></div>
 </div>`
@@ -41,8 +41,10 @@ function makeActiveSlide (cssSelector) {
 
     if (cssSelector === ".slider-item__previous-item") {
         firstSlide[1].classList.add('_active')
+        firstSlide[1].classList.remove('_d-none')
     } else if ( cssSelector === ".slider-item") {
         firstSlide[0].classList.add('_active')
+        firstSlide[0].classList.remove('_d-none')
     }
 }
 
